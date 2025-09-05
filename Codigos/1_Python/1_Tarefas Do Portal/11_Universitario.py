@@ -1,0 +1,10 @@
+lista = [0, 1, 2, 3, 4,  6, 7, 8, 9]
+listu = sorted(lista)
+print(sorted(lista)," <-Ordem Crescente")
+print(sorted(lista, reverse=True)," <-Decrescente")
+print(max(lista)," <-Maior numero")
+print(min(lista)," <-Menor numero")
+print("{:.1f}".format(sum(lista)/len(lista))," <-Media")
+print(sum(lista)," <-Soma")
+t = int(len(listu)/2)
+print(t," <-Meio")
