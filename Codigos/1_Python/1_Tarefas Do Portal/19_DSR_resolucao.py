@@ -1,4 +1,3 @@
-
 tps = ('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-')
 tb_SangueInfo = (
  {'tipo':'A+',
@@ -42,3 +41,16 @@ while True:
     else:
         print('\nPor favor, digite um tipo válido.\n')
 input('Digite qualquer tecla para continuar \n')
+while True:
+ doadores_sangue = 0  
+ if len(doadores_sangue) == 0:
+   novoSangue = False
+   print('\nVocê gostaria de ser um doador de sangue?')
+   opc = input('S ou N? \n').upper()
+ else:
+   novoSangue = True 
+ if opc == 'S':
+   print('\nExcelente! Vamos iniciar o seu Cadastro:\n')
+ else:
+   print('\nOk, obrigado por tudo e até mais.')
+   break
