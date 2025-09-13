@@ -52,7 +52,7 @@ tb_SangueInfo = (
 
 e = input("""Você gostaria de ser um doador de sangue?
 Ss ou Nn?\n""")
-w = {}
+w = ()
 tps = ('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-')
 if e.lower() == 's':
     while True:
@@ -71,11 +71,11 @@ if e.lower() == 's':
             while True:
                 print("tipo invalido")
                 s = input("qual o seu?")
-                if s in tps:e
+                if s in tps:
                     print("tipo valido")
                     break
-        if i >= 18 and p >= 50: 
-            w.update({"np1": n, "sp1": s,"ip1":i,"pp1":p,"tp1":t,"bp1":b,"cp1":c,"sp1":s})
+        if i >= 18 and p >= 50:
+            w.update({n: n, n: s,n:i,n:p,n:t,n:b,n:c,n:s})
             print(f'''
             Prontinho, agora você é um dos nossos doadores.
             Saiba que com apenas 1 doação o seu sangue é
