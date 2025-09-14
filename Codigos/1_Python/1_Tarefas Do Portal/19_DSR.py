@@ -48,8 +48,6 @@ tb_SangueInfo = (
  {'tipo':'O-',
    'doa':tps,
    'recebe':'O-'},)
-
-
 e = input("""Você gostaria de ser um doador de sangue?
 Ss ou Nn?\n""")
 w = ()
@@ -93,3 +91,7 @@ if e.lower() == 's':
         else:
             print("Vou entender isso como um Nn")
             break
+elif e.lower == "n":
+    print("sem alma")
+else:
+    print("vou entender isso como um nao")
