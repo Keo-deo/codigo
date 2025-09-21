@@ -73,7 +73,7 @@ if e.lower() == 's':
                     print("tipo valido")
                     break
         if i >= 18 and p >= 50:
-            w.update({n: n, n: s,n:i,n:p,n:t,n:b,n:c,n:s})
+            w.update({f"nome{n}": n, f"sexo{n}": s,f"idade{n}":i,f"peso{n}":p, f"telefone{n}":t,f"bairro{n}":b,"cidade{n}":c,f"tps{n}":s})
             print(f'''
             Prontinho, agora você é um dos nossos doadores.
             Saiba que com apenas 1 doação o seu sangue é
@@ -87,7 +87,12 @@ if e.lower() == 's':
         if e2 == "S" or e2 == "s":
             pass
         elif e2 == "N" or e2 == "n":
-            break
+            print(f"""nome:{"nome",n}
+            Sexo:{"sexo",n}
+            idade:{"idade",n}
+            Peso:{"peso",n}
+            Telefone:{"telefone",n}
+""")
         else:
             print("Vou entender isso como um Nn")
             break
