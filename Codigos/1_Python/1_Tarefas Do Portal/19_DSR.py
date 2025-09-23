@@ -84,19 +84,25 @@ if e.lower() == 's':
             print("você não atende aos requisitos")    
         e2 = input("""Deseja realizar um novo cadastro?
         Ss ou Nn?\n""")
-        if e2 == "S" or e2 == "s":
+        if e2.lower == "s":
             pass
-        elif e2 == "N" or e2 == "n":
+        elif e2.lower == "n":
             print(f"""nome:{"nome",n}
             Sexo:{"sexo",n}
             idade:{"idade",n}
             Peso:{"peso",n}
-            Telefone:{"telefone",n}
-""")
+            Telefone:{"telefone",n}""")
+            break
         else:
             print("Vou entender isso como um Nn")
+            print(f"""nome:{"nome",n}
+            Sexo:{"sexo",n}
+            idade:{"idade",n}
+            Peso:{"peso",n}
+            Telefone:{"telefone",n}""")
             break
-elif e.lower == "n":
+elif e.lower() == "n":
     print("sem alma")
 else:
-    print("vou entender isso como um nao")
+    print("""vou entender isso como um nao..."
+    SEM ALMA!""")
