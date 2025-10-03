@@ -50,9 +50,10 @@ tb_SangueInfo = (
    'recebe':'O-'},)
 e = input("""Você gostaria de ser um doador de sangue?
 Ss ou Nn?\n""")
-w = ()
+listapacientes = []
 tps = ('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-')
 if e.lower() == 's':
+    ndp = 1
     while True:
         print("Exelente!Vamos iniciar seu cadastro:")
         n = input("Digite seu nome:")
@@ -64,16 +65,18 @@ if e.lower() == 's':
         c = input("E ele fica em que cidade?")
         print(f"""Tipo de sangue existentes:
                     {tps}""")
-        s = input("qual o seu?")
-        if s not in tps:
+        ts = input("qual o seu?")
+        if ts not in tps:
             while True:
                 print("tipo invalido")
-                s = input("qual o seu?")
-                if s in tps:
+                ts = input("qual o seu?")
+                if ts in tps:
                     print("tipo valido")
                     break
         if i >= 18 and p >= 50:
-            w.update({f"nome{n}": n, f"sexo{n}": s,f"idade{n}":i,f"peso{n}":p, f"telefone{n}":t,f"bairro{n}":b,"cidade{n}":c,f"tps{n}":s})
+            dessavez = {}
+            dessavez.update({"nome": n, "sexo": s,"idade":i,"peso":p, "telefone":t,"bairro":b,"cidade":c,"tps":s})
+            listapacientes.append(dessavez)
             print(f'''
             Prontinho, agora você é um dos nossos doadores.
             Saiba que com apenas 1 doação o seu sangue é
@@ -87,19 +90,25 @@ if e.lower() == 's':
         if e2.lower == "s":
             pass
         elif e2.lower == "n":
-            print(f"""nome:{"nome",n}
-            Sexo:{"sexo",n}
-            idade:{"idade",n}
-            Peso:{"peso",n}
-            Telefone:{"telefone",n}""")
+            print(f"""nome:{listapacientes[0]["nome"]}
+            sexo:{listapacientes[0]["sexo"]}
+            idade:{listapacientes[0]["idade"]}
+            peso:{listapacientes[0]["peso"]}
+            Telefone:{listapacientes[0]["telefone"]}
+            Bairro:{listapacientes[0]["bairro"]}
+            Cidade:{listapacientes[0]["cidade"]}
+""")
             break
         else:
-            print("Vou entender isso como um Nn")
-            print(f"""nome:{"nome",n}
-            Sexo:{"sexo",n}
-            idade:{"idade",n}
-            Peso:{"peso",n}
-            Telefone:{"telefone",n}""")
+            print("vou entender isso como um nao")
+            print(f"""nome:{listapacientes[0]["nome"]}
+            sexo:{listapacientes[0]["sexo"]}
+            idade:{listapacientes[0]["idade"]}
+            peso:{listapacientes[0]["peso"]}
+            Telefone:{listapacientes[0]["telefone"]}
+            Bairro:{listapacientes[0]["bairro"]}
+            Cidade:{listapacientes[0]["cidade"]}
+""")
             break
 elif e.lower() == "n":
     print("sem alma")
