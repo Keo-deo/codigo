@@ -98,28 +98,6 @@ if e.lower() == 's':
         Ss ou Nn?\n""")
         if e2.lower() == "s":
             pass
-<<<<<<< HEAD
-        elif e2.lower == "n":
-            print(f"""nome:{listapacientes[0]["nome"]}
-            sexo:{listapacientes[0]["sexo"]}
-            idade:{listapacientes[0]["idade"]}
-            peso:{listapacientes[0]["peso"]}
-            Telefone:{listapacientes[0]["telefone"]}
-            Bairro:{listapacientes[0]["bairro"]}
-            Cidade:{listapacientes[0]["cidade"]}
-""")
-            break
-        else:
-            print("vou entender isso como um nao")
-            print(f"""nome:{listapacientes[0]["nome"]}
-            sexo:{listapacientes[0]["sexo"]}
-            idade:{listapacientes[0]["idade"]}
-            peso:{listapacientes[0]["peso"]}
-            Telefone:{listapacientes[0]["telefone"]}
-            Bairro:{listapacientes[0]["bairro"]}
-            Cidade:{listapacientes[0]["cidade"]}
-""")
-=======
         elif e2.lower() == "n":
             print("="*25)
             contador = 0
@@ -156,7 +134,6 @@ Cidade:{listapacientes[bao]["cidade"]}
 """)
                   if contador > 1:
                      print("="*25)
->>>>>>> f84282c173371eca3e3b2a0a2241df470843844e
             break
 elif e.lower() == "n":
     print("sem alma")
