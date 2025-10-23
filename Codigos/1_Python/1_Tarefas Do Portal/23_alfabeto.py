@@ -8,7 +8,7 @@ def verificar_latino(l1,l2):
             letras_latino = alfabeto_latino[l1_index:l2_index+1]
             print(f"letras entre {l1} e {l2} são: {letras_latino}")
         else:
-            letras_latino = alfabeto_latino[l2_index:l1_index+1]                                        #O russo nao pegou
+            letras_latino = alfabeto_latino[l2_index:l1_index+1]                                        #O russo nao pegou😥
             print(f"letras entre {l1} e {l2} são: {letras_latino}")
 def verificar_russo(l1,l2):
     if l1 in alfabeto_russo and l2 in alfabeto_russo:
