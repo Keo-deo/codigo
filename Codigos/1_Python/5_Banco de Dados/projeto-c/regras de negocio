@@ -16,5 +16,3 @@ pessoa{
     email
     data_de_nascimento
 }
-
-camadas
