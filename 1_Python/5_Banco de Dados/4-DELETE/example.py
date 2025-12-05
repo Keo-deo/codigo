@@ -6,6 +6,6 @@ db = cliente["arvore"]
 
 colection = db["conhecidos"]
 
-seletor = {"trabalho": "Instrutor de Programação"}
+seletor = {"nome": "Victor mateus"}
 
 colection.delete_one( seletor )

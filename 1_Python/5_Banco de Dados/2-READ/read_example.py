@@ -8,8 +8,8 @@ colection = db["conhecidos"]
 
 
 #LISTAR TODOS
-# for doc in colection.find():
-#     print(doc)
-
+for doc in colection.find():
+    print(doc)
+print("_-_"*50)
 #BUSCAR por dicionario que tenha tal valor dentro
 print(colection.find_one({"trabalho": "Instrutor de Programação"}))

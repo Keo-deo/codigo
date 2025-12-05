@@ -42,7 +42,7 @@ opções:
         
 
     if escolha == 5:
-        deletar()        
+        deletar()
 
     if escolha == 0:
         break
