@@ -37,6 +37,19 @@ def listar():
     #LISTAR TODOS
     for doc in colection.find():
         print(doc)
-    print("_-_"*50)
-    #BUSCAR por dicionario que tenha tal valor dentro
-    print(colection.find_one({"trabalho": "Instrutor de Programação"}))
+
+def pesquisar(email):
+    pessoa = colection.find_one({"email": email})
+    return pessoa
+
+def atualizar(email, n_nome, n_email, n_data_de_nascimento):
+    n_dados = {
+        "nome" : n_nome,
+        "email": n_email,
+        "data_de_nascimento": n_data_de_nascimento
+    }
+    colection.update_one({"email": email}, {"$set": n_dados})
+    
+def deletar(email):
+    pessoa = pesquisar(email)
+    colection.delete_one(pessoa)

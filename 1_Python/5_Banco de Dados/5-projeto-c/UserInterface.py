@@ -1,4 +1,4 @@
-from funcoes import pessoas,cadastrar,listar,pesquisar,atualizar,deletar
+from funcoes_mongo import cadastrar,listar,pesquisar,atualizar,deletar
 
 while True:
     print("""
@@ -16,33 +16,30 @@ opções:
         data_nascimento = input('escolha data de nascimento da pessoa a cadastrar:')
         cadastrar(nome,email,data_nascimento)
 
-    if escolha == 2:
+    elif escolha == 2:
         peoples = listar()
         print(f"""{peoples}
 """)
 
-    if escolha == 3:
+    elif escolha == 3:
         email_a_pesquisar = input("digite o email que voce quer pesquisar:")
         result = pesquisar(email_a_pesquisar)
+        print("aqui está o resultado da pesquisa:")
         print(f"{result}")
 
-    if escolha == 4:
+    elif escolha == 4:
         email = input('escolha o email da pessoa a atualizar:')
-        nome = input('Digite o novo nome: ')
+        n_nome = input('Digite o novo nome: ')
         n_email = input('Digite o novo e-mail: ')
-        birthdate = input('Digite a nova data de nascimento: ')
+        n_birthdate = input('Digite a nova data de nascimento: ')
+        atualizar(email, n_nome, n_email, n_birthdate)
+    elif escolha == 5:
+        email = input('escolha o email da pessoa a deletar:')
+        deletar(email)
 
-        pessoa = {}
-        if nome != '':
-            pessoa = atualizar(email, 'nome', nome)
-        if birthdate != '':
-            pessoa = atualizar(email,"data_de_nascimento",birthdate)
-        if n_email != '':
-            pessoa = atualizar(email,"email",n_email)
-        
-
-    if escolha == 5:
-        deletar()
-
-    if escolha == 0:
+    elif escolha == 0:
+        break
+    
+    else:
+        print("opção inválida, encerrando o programa.")
         break
