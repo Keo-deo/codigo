@@ -1,64 +1,55 @@
-pessoas = [
-    {
-        'nome' : 'Victor',
-        'email': 'victor@gmail.com',
-        'data_de_nascimento': '2025-11-21'
-    },
-    {
-        'nome' : 'matheus',
-        'email': 'matheus@gmail.com',
-        'data_de_nascimento': '2025-11-21'
-    },
-    {
-        'nome' : 'murilo',
-        'email': 'murilo@gmail.com',
-        'data_de_nascimento': '2025-11-21'
-    }
-]
+from pymongo import MongoClient
 
-def cadastrar(nome, email, birthdate):
-    pessoa = {
+cliente = MongoClient("mongodb://localhost:27017/")
+
+db = cliente["arvore"]
+
+colection = db["conhecidos"]
+
+# pessoas = [
+#     {
+#         'nome' : 'Victor',
+#         'email': 'victor@gmail.com',
+#         'data_de_nascimento': '2025-11-21'
+#     },
+#     {
+#         'nome' : 'matheus',
+#         'email': 'matheus@gmail.com',
+#         'data_de_nascimento': '2025-11-21'
+#     },
+#     {
+#         'nome' : 'murilo',
+#         'email': 'murilo@gmail.com',
+#         'data_de_nascimento': '2025-11-21'
+#     }
+# ]
+
+def cadastrar(nome, email,data_de_nascimento):
+    dados_pessoa = {
         'nome' : nome,
         'email': email,
-        'data_de_nascimento': birthdate
+        'data_de_nascimento': data_de_nascimento
     }
-    pessoas.append(pessoa)
+    res = colection.insert_one(dados_pessoa)
+    print(res)
 
-#---------------------------------------------------------------------------------------------------------
 def listar():
-    return pessoas
+    #LISTAR TODOS
+    for doc in colection.find():
+        print(doc)
 
-#---------------------------------------------------------------------------------------------------------
-def pesquisar(email) -> dict:
-    pessoa = {}
-    for p in pessoas:
-        if p["email"] == email:
-            pessoa = p
-            break
+def pesquisar(email):
+    pessoa = colection.find_one({"email": email})
     return pessoa
 
-#---------------------------------------------------------------------------------------------------------
-def atualizar(email, campo, valor):
-    pessoa = pesquisar(email)
-    if campo in pessoa.keys():
-        pessoa[campo] = valor
-        return pessoa
-    return { }
-
-def atualizar(email, campo1, valor1, campo2, valor2):
-    a = atualizar(email,campo1,valor1)
-    b = atualizar(email,campo2,valor2)
-    att = a | b
-    return att
-
-def atualizar(email, campo1, valor1, campo2, valor2, campo3, valor3):
-    a = atualizar(email,campo1,valor1) 
-    b = atualizar(email,campo2,valor2)
-    c = atualizar(email,campo3,valor3)
-    att = a | b | c
-    return att
-
-#---------------------------------------------------------------------------------------------------------
+def atualizar(email, n_nome, n_email, n_data_de_nascimento):
+    n_dados = {
+        "nome" : n_nome,
+        "email": n_email,
+        "data_de_nascimento": n_data_de_nascimento
+    }
+    colection.update_one({"email": email}, {"$set": n_dados})
+    
 def deletar(email):
     pessoa = pesquisar(email)
-    pessoas.remove(pessoa)
+    colection.delete_one(pessoa)

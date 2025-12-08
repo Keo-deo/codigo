@@ -1,4 +1,4 @@
-from funcoes_mongo import cadastrar,listar,pesquisar,atualizar,deletar
+from funcoes import cadastrar,listar,pesquisar,atualizar,deletar
 
 while True:
     print("""
@@ -38,6 +38,7 @@ opções:
         deletar(email)
 
     elif escolha == 0:
+        print("encerrando o programa.")
         break
     
     else:
