@@ -1,4 +1,4 @@
-from BEC import adicionar, exibir, localizar, alterar, deletar
+from BEI import adicionar, exibir, localizar, alterar, deletar
 
 print("""Bem-vindo ao sistema de gerenciamento de Pendencias.
       você pode adicionar , exibir , localizar , alterar e deletar uma pendencia.

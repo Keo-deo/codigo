@@ -24,6 +24,7 @@ def exibir():
 
 def localizar(pendencia):
     item = collection.find_one({"pendencia": pendencia})
+    print('se aparecer "none" significa que a pendencia nao existe!')
     print(item)
     return item
 
