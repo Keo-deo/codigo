@@ -13,3 +13,4 @@ dados = {
 
 res = colection.insert_one(dados)
 print(res)
+

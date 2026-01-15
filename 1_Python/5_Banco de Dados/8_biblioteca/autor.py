@@ -27,7 +27,18 @@ def ex_autor():
     dados = colection.find()
     return dados
 
-def psq_autor():
-    obj = ObjectId(id)
-    dados = colection.find_one('_id', ObjectId)
+def psq_autor(nome):
+    dados = colection.find_one('nome',nome)
     return dados
+
+def upd_autor(nome,n_nome, n_birthdate):
+    psq_autor(nome)
+    dados = {
+        "nome": n_nome,
+        "birthdate": n_birthdate 
+    }
+    colection.update_one({'nome':nome}, {"$set":dados}) 
+
+def del_autor(nome):
+    colection.delete_one({'nome':nome})
+

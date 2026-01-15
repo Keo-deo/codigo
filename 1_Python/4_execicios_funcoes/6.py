@@ -1,5 +1,5 @@
 def verificar_idade(ano):
-    idade = 2025 - ano
+    idade = 2026 - ano
     if idade >= 18:
         return "maior de idade"
     else:
