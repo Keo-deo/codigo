@@ -1,0 +1,19 @@
+from pymongo import MongoClient
+
+cliente = MongoClient("mongodb://localhost:27017/")
+
+db = cliente["tranferencia_de_jogadores"]
+
+colection = db["jogadores"]
+
+dados = {
+    nome
+    preco   (preco em milhao)
+}
+
+opcoes:
+    1-adicionar jogador
+    2-exibir todos os jogadores cadastrados
+    3-exibir um jogador expecifico
+    4-atualizar preco de tranferencia de um jogador
+    5-excluir um jogador do cadastro
