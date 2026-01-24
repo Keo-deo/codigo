@@ -5,28 +5,29 @@ o preco de transferencia de jogadores""")
 
 while True:
     print("""\n Opções:
-    1-adicionar jogador
-    2-exibir todos os jogadores cadastrados
-    3-exibir um jogador expecifico
-    4-atualizar preco de tranferencia de um jogador
-  → 5-excluir um jogador do cadastro
+    1-Adicionar jogador
+    2-Exibir todos os jogadores cadastrados
+    3-Exibir um jogador expecifico
+    4-Atualizar preco de tranferencia de um jogador
+  → 5-Excluir um jogador do cadastro
   ↗ ↑ ↖
     \n""")
 
     escolha = int(input("""Para escolher uma das opcoes usando os numeros
-    EX: caso queira escolher "adicionar jogador" digite 1
-    escolha uma das opções:"""))
+    EX: caso queira escolher "adicionar jogador" digite 1.
+    Escolha uma das opções:"""))
 
     if escolha == 1:
-        nome = input("escolha o nome do jogador a cadastrar: ")
-        preco = input(f"digite o preco de transferencia do {nome} em milhões:")
+        nome = input("Escolha o nome do jogador a cadastrar: ")
+        preco = input(f"Digite o preco de transferencia do {nome} em milhões:")
         ad_jogador(nome,preco)
 
     elif escolha == 2:
-        pass
+        exibir_all
 
     elif escolha == 3:
-        pass
+        nome = input("Digite o nome do jogador que voce quer achar:")
+        jog_expecifico(nome)
 
     elif escolha == 4:
         pass
@@ -39,4 +40,4 @@ while True:
         break
 
     else:
-        print("esta nao existe")
+        print("Esta opção nao existe")
