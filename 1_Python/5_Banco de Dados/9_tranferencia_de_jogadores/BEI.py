@@ -20,6 +20,16 @@ def exibir_all():
 
 def jog_expecifico(nome):
     jog = colection.find_one({"nome": nome})
-    print(f"""Se aparecer "none" é porque o jogador nao estra cadastrado
-          {jog}""")
+    print(f"""Se aparecer "none" é porque o jogador nao esta cadastrado
+{jog}""")
     return jog
+
+def atualizar_preco(nome, novo_preco):
+    n_preco = {
+        "preco": novo_preco
+    }
+    colection.update_one({"nome": nome}, {"$set": n_preco})
+
+def del_jog(nome):
+    item = jog_expecifico(nome)
+    colection.delete_one(item)

@@ -17,3 +17,10 @@ opcoes:
     3-exibir um jogador expecifico
     4-atualizar preco de tranferencia de um jogador
     5-excluir um jogador do cadastro
+
+exemplos:
+    1-neymar 222 milhões
+    2-cristiano 1 bilhão
+    3-messi 62 milhões
+    4-vinicius 11 milhões
+    5-mbappe 30 milhoes
