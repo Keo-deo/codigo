@@ -16,12 +16,12 @@ def ad_jogador(nome, preco):
 
 def exibir_all():
     for jog in colection.find():
-        print(jog)
+        print(f"Nome:{jog["nome"]} | Preço: R$ {jog["preco"]}")
 
 def jog_expecifico(nome):
     jog = colection.find_one({"nome": nome})
     print(f"""Se aparecer "none" é porque o jogador nao esta cadastrado
-{jog}""")
+Nome:{jog["nome"]} | Preço: R$ {jog["preco"]}""")
     return jog
 
 def atualizar_preco(nome, novo_preco):
@@ -31,5 +31,8 @@ def atualizar_preco(nome, novo_preco):
     colection.update_one({"nome": nome}, {"$set": n_preco})
 
 def del_jog(nome):
-    item = jog_expecifico(nome)
-    colection.delete_one(item)
+    try:
+        item = jog_expecifico(nome)
+        colection.delete_one(item)
+    except:
+        print("none")

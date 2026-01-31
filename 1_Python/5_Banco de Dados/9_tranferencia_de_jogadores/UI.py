@@ -1,4 +1,5 @@
 from BEI import ad_jogador, exibir_all, jog_expecifico, atualizar_preco, del_jog
+import questionary
 import time
 
 
@@ -6,46 +7,41 @@ print("""Este programa foi criado com o intuito de consultar
 o preco de transferencia de jogadores""")
 
 while True:
-    print("""\n Opções:
-  → 1-Adicionar jogador
-  ↗ ↑ ↖
-    2-Exibir todos os jogadores cadastrados
-    3-Exibir um jogador expecifico
-    4-Atualizar preco de tranferencia de um jogador
-    5-Excluir um jogador do cadastro
-    0-Encerrar do programa
-    \n""")
+    escolha = questionary.select(
+        "\nOpções:",
+        choices=[
+            "Adicionar jogador",
+            "Exibir todos os jogadores cadastrados",
+            "Exibir um jogador expecifico",
+            "Atualizar preço de tranferencia de um jogador",
+            "Excluir um jogador do cadastro",
+            "Encerrar do programa"
+        ]
+    ).ask()
 
-    escolha = int(input("""Para escolher uma das opcoes usando os numeros
-    EX: caso queira escolher "adicionar jogador" digite 1.
-    Escolha uma das opções:"""))
-
-    if escolha == 1:
+    if escolha == "Adicionar jogador":
         nome = input("Escolha o nome do jogador a cadastrar: ")
-        preco = input(f"""O preco deve ser em real( R$ ).
+        preco = input(f"""O preço deve ser em real( R$ ).
 Digite o preco de transferencia do {nome}:""")
         ad_jogador(nome,preco)
 
-    elif escolha == 2:
+    elif escolha == "Exibir todos os jogadores cadastrados":
         exibir_all()
 
-    elif escolha == 3:
+    elif escolha == "Exibir um jogador expecifico":
         nome = input("Digite o nome do jogador que voce quer achar:")
         jog_expecifico(nome)
 
-    elif escolha == 4:
-        nome = input("Digite o nome do jogador que voce quer atualizar o preco:")
+    elif escolha == "Atualizar preço de tranferencia de um jogador":
+        nome = input("Digite o nome do jogador que voce quer atualizar o preço:")
         novo_preco = input(f"Digite o novo preco de transferencia do {nome}:")
         atualizar_preco(nome, novo_preco)
 
-    elif escolha == 5:
+    elif escolha == "Excluir um jogador do cadastro":
         nome = input("Digite o nome do jogador que voce quer excluir do cadastro:")
         del_jog(nome)
 
-    elif escolha == 0:
+    elif escolha == "Encerrar do programa":
         print("Encerrando programa...")
         time.sleep(2)
         break
-
-    else:
-        print("Esta opção nao existe")
