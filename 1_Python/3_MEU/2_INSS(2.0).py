@@ -47,7 +47,7 @@ if pmv == False:
         v = int(idade - 65)
         print("----------------------------------------------------------------------------------")
         print("Faltam", v ,"anos para a aposentadoria")
-        a = 2025 - idade + 65
+        a = 2026 - idade + 65
         print("E isso sera no ano de",a)
         break
   elif oda == "b" or oda == "B":
