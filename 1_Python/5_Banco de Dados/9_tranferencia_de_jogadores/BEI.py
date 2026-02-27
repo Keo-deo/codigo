@@ -16,12 +16,12 @@ def ad_jogador(nome, preco):
 
 def exibir_all():
     for jog in colection.find():
-        print(jog)
+        print(f'nome: {jog['nome']} | valor de transferência: {jog['preco']}')
 
 def jog_expecifico(nome):
     jog = colection.find_one({"nome": nome})
     print(f"""Se aparecer "none" é porque o jogador nao esta cadastrado
-{jog}""")
+{jog["nome"]} | {jog["preco"]}""")
     return jog
 
 def atualizar_preco(nome, novo_preco):

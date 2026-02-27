@@ -16,7 +16,7 @@ opcoes:
     2-exibir todos os jogadores cadastrados
     3-exibir um jogador expecifico
     4-atualizar preco de tranferencia de um jogador
-    5-excluir um jogador do cadastro
+    5-excluir um jogador do cadastro  
 
 exemplos:
     1-neymar 222 milhões
