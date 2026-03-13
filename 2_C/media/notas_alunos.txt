@@ -1,7 +1,3 @@
 relatorio de media das materias:
 Nome do aluno 
-: murilo P ereirastatus: Reprovado
-
-git add .
-git commit -m "C"
-git push
+: joaostatus: Reprovado
